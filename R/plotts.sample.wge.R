@@ -148,6 +148,10 @@ for (i in 1:nf) {segments(freq[i],min.per,freq[i],db[i])
 #
 if (periodogram == FALSE) {out1=list(xbar=xbar,autplt=autplt,freq=freq,dbz=dbz)}
 if (periodogram == TRUE) {out1=list(xbar=xbar,autplt=autplt,freq=freq,dbz=dbz,db=db)}
+
+#reset graphing parameters
+par(mfrow=c(1,1))
+
 return(out1)                       
 }
 
