@@ -4,13 +4,11 @@ kalman.miss.wge=function(y,start,gam0,F,gamV,Gtmiss,gamW){
   sqgamW=sqrt(gamW)
   chgamW=chol(gamW)
   yy=y
-  ####################
-  #####  temp fix
-  result=astsa::xKsmooth1(num=n, y=yy, A=Gtmiss, mu0=start, Sigma0=gam0, Phi=F, Ups=0,Gam=0,cQ=sqgamV, cR=chgamW,input=0)
-  ####  perm fix
+  
+  #Fix from David Stoffer 1-29-2023
   result=astsa::Ksmooth(y=yy, A=Gtmiss, mu0=start, Sigma0=gam0, Phi=F, sQ=sqgamV, sR=chgamW)
-  ###########
-  ######################
+  # end fix
+  
   pfs=cbind(yy,result$xp,result$Pp,result$xf,result$Pf,result$xs,result$Ps)
   colnames(pfs)=c("Data","Prediction","Var_Predict","Filter","Var_Filter","Smooth","Var_Smooth")
   return(pfs)

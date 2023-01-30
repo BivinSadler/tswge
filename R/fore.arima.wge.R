@@ -55,7 +55,7 @@ phitot.res=prod.res.tmp$model.coef
 #cat('fac4',fac4,'\n')
 ptot.fore=p+d+s+dlam
 ptot.res=d+s+dlam
-# cat('ptot.res=',ptot.res,'\n')
+#  cat('ptot.res=',ptot.res,'\n')
 # cat('phitot.res',phitot.res,'\n')
 # cat('ptot.fore=',ptot.fore,'\n')
 # cat('phitot.fore',phitot.fore,'\n')                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
