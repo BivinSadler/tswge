@@ -180,7 +180,7 @@ if(s == 0 & d == 0)
   
   for( i in 1:numwindows)
   {
-    forecasts <- fore.arma.wge2(series[i:(i+(trainingSize-1))], plot = TRUE, phi = phi, theta = theta,n.ahead = horizon, xbar = mean(series))
+    forecasts <- fore.arma.wge2(series[i:(i+(trainingSize-1))], plot = FALSE, phi = phi, theta = theta,n.ahead = horizon, xbar = mean(series))
 
     RMSE = sqrt(mean((series[(trainingSize+i):(trainingSize+ i + (horizon) - 1)] - forecasts$f)^2))
     
